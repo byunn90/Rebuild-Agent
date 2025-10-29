@@ -3,8 +3,6 @@ import sys
 from google import genai
 from dotenv import load_dotenv
 
-
-
 def main():
     load_dotenv()
     prompt_control = sys.argv[0]
@@ -17,14 +15,17 @@ def main():
 
         
     )
-    print("Prompt tokens:", response.usage_metadata.prompt_token_count)
-    print("Response tokens:", response.usage_metadata.candidates_token_count)
-    print("Response:")
-    print(response.text)
-
+    # print("Response:")
+    # print(response.text)
+    
     if len(sys.argv) < 2:
         print("Error has occured")
         sys.exit(1)
+    if "--verbose" in prompt_control:    
+        print("Prompt tokens:", response.usage_metadata.prompt_token_count)
+        print("Response tokens:", response.usage_metadata.candidates_token_count)
+        print(f"User prompt:" {sys.argv[0]})
+    
     print(prompt_control)    
 
 
