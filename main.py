@@ -21,10 +21,10 @@ def main():
     if len(sys.argv) < 2:
         print("Error has occured")
         sys.exit(1)
-    if "--verbose" in prompt_control:    
+    if "--verbose":    
         print("Prompt tokens:", response.usage_metadata.prompt_token_count)
         print("Response tokens:", response.usage_metadata.candidates_token_count)
-        print(f"User prompt:" {sys.argv[0]})
+        print(f"User prompt:" {[prompt]})
     
     print(prompt_control)    
 
