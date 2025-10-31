@@ -26,9 +26,5 @@ def main():
     print("Error No --verbose")
 
     
-    
-
-
-
 if __name__ == "__main__":
     main()
