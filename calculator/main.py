@@ -22,6 +22,7 @@ def main():
             print("Error: Expression is empty or contains only whitespace.")
     except Exception as e:
         print(f"Error: {e}")
+        
 
 
 if __name__ == "__main__":
