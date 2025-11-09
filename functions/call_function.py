@@ -19,7 +19,7 @@ def call_function(function_call_part, verbose=False):
         print(f" - Calling function: {function_call_part.name}")   
     
     function_name = function_call_part.name
-    #  Go over this please
+    #  Dont forget to use types.content
     function_arg = dict(function_call_part.args or {})
     fn = function_map.get(function_name)
 
