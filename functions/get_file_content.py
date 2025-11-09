@@ -1,5 +1,5 @@
 import os
-from functions.config import MAX_CHARS  # MAX_CHARS = 10000 in functions/config.py
+from config import MAX_CHARS  # MAX_CHARS = 10000 in functions/config.py
 from google.genai import types
 
 schema_get_file_content = types.FunctionDeclaration(
