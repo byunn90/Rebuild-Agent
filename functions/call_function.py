@@ -1,8 +1,9 @@
-from get_files_info import schema_get_files_info
-from get_file_content import schema_get_file_content
-from run_python_file import schema_run_python_file
-from write_file import schema_write_file
-
+# functions/call_function.py
+from google.genai import types
+from .get_files_info import get_files_info
+from .get_file_content import get_file_content
+from .run_python_file import run_python_file
+from .write_file import write_file
 
 def call_function(function_call_part, verbose=False):
 
@@ -23,21 +24,19 @@ def call_function(function_call_part, verbose=False):
 
     fn = function_map.get(function_name)
 
-    fn is None:
+    if fn is None:
         return types.Content(
-    role="tool",
-    parts=[
-        types.Part.from_function_response(
-            name=function_name,
-            response={
-                "error": f"Unknown function: {function_name}"
-            },
+            role="tool",
+            parts=[
+                types.Part.from_function_response(
+                    name=function_name,
+                    response={"error": f"Unknown function: {function_name}"},
+                )
+            ],
         )
-    ],
-)
-
     function_arg["working_directory"] = "calculator"
     result = fn(**function_arg)
+
 
 
     return types.Content(
