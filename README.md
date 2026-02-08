@@ -20,6 +20,9 @@ This project explores how **command-driven AI agents** can plan, reason, and exe
   - List directories  
   - Create new files with strict formatting rules  
   - Generate structured documents and code outputs  
+  - Has calculator function
+  - Fixes live bugs (Must give it direct instructions where the bug is which directory)
+  - Creates it own files on input
 
 - **Bug Assistance & Debugging Support**
   - Helps analyze errors and suggests fixes based on user-provided context and instructions.
